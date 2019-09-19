@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+		
+<bean id="employee" class="com.bv.model.Employee" autowire="byType">
+<property name="id" value="18"/>
+<property name="name" value="Amrapali"></property>
+
+<property name="doj" ref="datebean"/>
+</bean> 
+
+<bean id="triangle" class="com.bv.model.Triangle" autowire="constructor">
+<!-- <property name="points" > -->
+</bean>
+<!-- <list>
+	<ref bean="point1"/>
+	<ref bean="point2"/>
+	<ref bean="point3"/>
+</list>
+</property> -->
+
+<!-- <bean id="a" class="com.bv.model.Point">
+<property name="x" value="9"/>
+<property name="y" value="4"/>
+</bean>
+
+<bean id="b" class="com.bv.model.Point">
+<property name="x" value="5"/>
+<property name="y" value="2"/>
+</bean>
+
+<bean id="c" class="com.bv.model.Point">
+<property name="x" value="4"/>
+<property name="y" value="7"/>
+</bean> -->
+
+<bean id="a" class="com.bv.model.Point">
+<constructor-arg index="0" value="9"/>
+<constructor-arg index="1" value="4"/>
+</bean>
+
+<bean id="b" class="com.bv.model.Point">
+<constructor-arg index="0" value="5"/>
+<constructor-arg index="1" value="2"/>
+</bean>
+
+<bean id="c" class="com.bv.model.Point">
+<constructor-arg index="0" value="4"/>
+<constructor-arg index="1" value="7"/>
+</bean>
+
+<!-- <bean id="addressbean" class="com.bv.model.Address">
+<property name="address" value="mumbai"/>
+</bean> -->
+
+<bean id="datebean" class="com.bv.model.MyDate">
+<property name="dd" value="09"/>
+<property name="mm" value="09"/>
+<property name="yyyy" value="2019"/>
+</bean>
+
+<!-- <bean id="pointbean1" class="com.bv.model.Point">
+<property name="x" value="9"/>
+<property name="y" value="4"/>
+</bean>
+
+<bean id="pointbean2" class="com.bv.model.Point">
+<property name="x" value="5"/>
+<property name="y" value="2"/>
+</bean>
+
+<bean id="pointbean3" class="com.bv.model.Point">
+<property name="x" value="4"/>
+<property name="y" value="7"/>
+</bean> -->
+<bean id="student" class="com.bv.model.Student" autowire="byName">
+<property name="studentId" value="12"/>
+<property name="studentName" value="Vaibhav"/> 
+</bean>
+<!-- <property name="address"> --> 
+<!-- <list>
+	<value>Solapur</value>
+	<value>Maharashtra</value>
+	<value>410210</value>
+</list> -->
+<!--  <bean id="address" class="com.bv.model.Address">
+<property name="city" value="Mumbai"/>
+<property name="state" value="Maharashtra"/>
+<property name="zipcode" value="210410"/>
+</bean>  -->
+<!-- </property> -->
+<!--  <constructor-arg type="int" value="12"/>
+<constructor-arg type="java.lang.String" value="Vaibhav"/>  -->
+<!-- </bean> -->
+
+<bean id="address" class="com.bv.model.Address">
+<constructor-arg index="0" value="Mumbai"/>
+<constructor-arg index="1" value="Maharashtra"/>
+<constructor-arg type="int" value="210410"/>
+</bean>
+</beans>
