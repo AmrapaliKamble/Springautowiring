@@ -4,14 +4,14 @@
 	xmlns:context="http://www.springframework.org/schema/context"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
-		
-<bean id="employee" class="com.bv.model.Employee" autowire="byType">
+<context:annotation-config/>
+<!-- <bean id="employee" class="com.bv.model.Employee" autowire="byType">
 <property name="id" value="18"/>
 <property name="name" value="Amrapali"></property>
 
 <property name="doj" ref="datebean"/>
 </bean> 
-
+ -->
 <bean id="triangle" class="com.bv.model.Triangle" autowire="constructor">
 <!-- <property name="points" > -->
 </bean>
@@ -101,4 +101,27 @@
 <constructor-arg index="1" value="Maharashtra"/>
 <constructor-arg type="int" value="210410"/>
 </bean>
+
+<bean id="address1" class="com.bv.model.Address">
+<constructor-arg index="0" value="solapur"/>
+<constructor-arg index="1" value="Maharashtra"/>
+<constructor-arg type="int" value="210410"/>
+</bean>
+
+
+<!--ANOTATIONS  -->
+
+
+
+<bean id="person" class="com.bv.model.Person">
+<property name="id" value="18"/>
+<property name="name" value="Komal"/>
+<property name="age" value="18"/>
+</bean>
+
+<!-- <bean id="person" class="com.bv.model.Person">
+<constructor-arg index="0" value="19"/>
+<constructor-arg index="1" value="monali"/>
+<constructor-arg index="2" value="29"/>
+</bean> -->
 </beans>
